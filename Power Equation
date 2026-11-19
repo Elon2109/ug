@@ -1,0 +1,44 @@
+#Name: Vaishnavi Kishor Rajole
+#TYME [A]
+#Roll No: 59 #Power Equation clc;
+close all; clear all;
+n = input('Enter the number of data points n: '); for i = 1:n
+x(i) = input('Enter x: ');
+end
+for i = 1:n
+y(i) = input('Enter y: ');
+end
+sumlogx = 0;
+sumlogy = 0;
+sumlogx2 = 0;
+sumlogxy = 0; for i = 1:n
+sumlogx = sumlogx + log(x(i)); sumlogy = sumlogy + log(y(i));
+sumlogx2 = sumlogx2 + log(x(i))*log(x(i)); sumlogxy = sumlogxy + log(x(i))*log(y(i));
+end
+A = [n, sumlogx; sumlogx, sumlogx2];
+B = [sumlogy; sumlogxy];
+C = inv(A)*B;
+a = exp(C(1));
+b = C(2);
+fprintf('a = %.4f\n', a);
+fprintf('b = %.4f\n', b); fprintf('\nSolution: y = ax^b\n'); fprintf('Equation: y = %.4f*x^%.4f\n', a, b);
+Enter the number of data points n: 4 Enter x: 61
+Enter x: 26
+Enter x: 7
+
+Enter	x:	2.6
+Enter	y:	350
+Enter	y:	400
+Enter	y:	50
+Enter	y:	600
+a = 210.4654
+b = 0.0741
+
+Solution: y = ax^b
+Equation: y = 210.4654*x^0.0741
+
+SOLVER
+>> polyfit(log(x), log(y), 1) ans = 1×2
+ 
+0.0741	5.3493
+
