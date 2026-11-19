@@ -1,0 +1,34 @@
+%Name: Maitryani Ghodeswar
+%Roll No.18
+%Div: T.Y.A.Mechanical
+%Date: 27/7/26
+%Bisection Method clc; clear
+all; close
+all; F=input('Equation:');
+X1=input('Initial Guess X1:'); X2=input('Initial Guess X2:'); N=input('Iteratives:'); while F(X1)*F(X2)>0
+X1=input('Replace Initial Guess X1:'); X2=input('Replace Initial Guess X2:');
+end for i=1:N X3=(X1+X2)/2; if F(X1)*F(X3)>0
+X1=X3;	else
+X2=X3;
+
+
+end fprintf('\n %d Itration Root:%f', i, X3) end
+ 
+Replace Initial Guess X1:2 Replace Initial Guess X2:3
+
+1	Itration Root:2.500000
+2	Itration Root:2.250000
+3	Itration Root:2.125000
+4	Itration Root:2.062500
+5	Itration Root:2.093750
+6	Itration Root:2.109375
+>>fzero(F,[2 3])
+
+ans=
+2.0946
+ 
+
+Solution:
+Equation:@(x) (x^3-2*x-5) Initial Guess X1:0
+Initial	Guess	X2:1 Iteratives:6
+Replace Initial Guess X1:1 Replace Initial Guess X2:2
