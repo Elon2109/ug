@@ -1,0 +1,51 @@
+%Name: Maitryani Ghodeswar
+%Roll no: 21
+%Div: TYME(A)
+%Inverse Interpolation 
+clc;
+close all; clear all;
+
+n=input('Enter the number of data points n: ');
+
+for i = 1:n
+x(i)= input('Enter x: ');
+end
+
+for i = 1:n
+y(i) = input('Enter y: ');
+end
+
+yp = input('Enter the value of y to find x: ');
+
+xp = 0;
+
+for i = 1:n
+p = 1;
+
+for j = 1:n
+if i ~= j
+p = p * (yp - y(j))/(y(i) - y(j));
+end
+end
+
+xp = xp + p * x(i);
+end
+
+fprintf('\nInterpolated value of x = %.4f\n', xp);
+
+
+
+Enter the number of data points n: 4
+Enter	x:	1
+Enter	x:	2
+Enter	x:	3
+Enter	x:	4
+Enter	y:	10
+Enter	y:	15
+Enter	y:	25
+Enter	y:	40
+Enterthe value of y to find x:20 Interpolated value of x = 2.6222
+%Solver
+p=polyfit(y,x,n-1); xs=polyval(p,20)
+xs=2.6222
+
