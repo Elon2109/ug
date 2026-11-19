@@ -1,0 +1,54 @@
+%Name: Vaishnavi Kishor Rajole
+% Roll no: 59
+% Div: TYME(A)
+% Exponential Curve Fitting
+clc; close all;
+clear all;
+n = input('Enter the number of data points n: ');
+
+for i = 1:n
+x(i) = input('Enter x: ');
+end
+
+for i = 1:n
+y(i) = input('Enter y: ');
+end
+
+% Transform the data for i = 1:n
+X(i) = x(i);
+Y(i) = log(y(i));
+end
+
+sumx = 0;
+sumy = 0;
+sumx2 = 0;
+sumxy = 0;
+
+for i = 1:n
+sumx = sumx + X(i); sumy = sumy + Y(i); sumx2 = sumx2 + X(i)^2;
+sumxy = sumxy + X(i)*Y(i);
+end
+
+% Normal equations A = [n sumx;
+sumx sumx2];
+ 
+ 
+Enter the number of data points n: 5 Enter x: 2
+Enter x: 3
+Enter x: 4
+Enter x: 5
+Enter x: 6
+Enter y: 8.3
+Enter y: 15.4
+Enter y: 33.1
+Enter y: 65.2
+Enter y: 127.4
+a = 2.0399
+b = 0.6905
+Solution: y = a*exp(b*x) Equation: y = 2.0399*exp(0.6905*x)
+%Solver
+>> a = exp(p(2)) b = p(1)
+a =2.0399
+
+
+b =0.6905
