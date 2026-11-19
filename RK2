@@ -1,0 +1,29 @@
+Adarsh Chavanke
+%TYA 10
+%Runga Kutta 2 clc
+close all clear all f=input('dy/dx:');
+x0=input('enter the initial value x0:'); y0=input('enter the initial value y0:'); xg=input('enter the function xg:'); h=input('enter the given function h:'); n=(xg-x0)/h;
+for i=1:n
+k1=h*f(x0,y0); k2=h*f(x0+h/2,y0+k1/2); k=(1/2)(k1+k2)
+yg=y0+k2; x0=x0+h; y0=yg;
+fprintf('x= %.4f, yg= %.4f\n',x0,yg); end
+dy/dx:@(x,y) (y-x)/(y+x)
+enter the initial value x0:0 enter the initial value y0:1 enter the function xg:0.1
+enter the given function h:0.02 k =0.0198
+x= 0.0200, yg= 1.0196
+k =0.0190
+x= 0.0400, yg= 1.0385
+k =0.0183
+x= 0.0600, yg= 1.0567
+k =0.0177
+x= 0.0800, yg= 1.0742
+k =0.0171
+x= 0.1000, yg= 1.0911
+
+x	y
+0	1.0000
+0.0200	1.0196
+0.0400	1.0385
+0.0600	1.0567
+0.0800	1.0742
+0.1000	1.0911
