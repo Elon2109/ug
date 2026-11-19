@@ -1,0 +1,31 @@
+Maitryani Ghodeswar
+%TYA 21
+%Euler's Method clc
+clearvars close all
+f=input('dy/dx:');
+x0=input('enter the initial value x0:'); y0=input('enter the initial value y0:'); xg
+= input('enter the function xg:');
+h = input('enter the given function h:'); n = (xg - x0) / h;
+for i=1:n
+yg=y0+h*f(x0,y0); x0=x0+h;
+y0=yg;
+fprintf('yg= %.4f\n',yg); end
+dy/dx:@(x,y) (y-x)/(y+x)
+enter the initial value x0:0 enter the initial value y0:1 enter the function xg:0.1
+enter the given function h:0.02 yg= 1.0200
+yg= 1.0392
+yg= 1.0577
+yg= 1.0756
+yg= 1.0928
+
+[x,y] =ode23(f,[0:0.02:0.1],1)
+
+
+
+x	y
+0	1.0000
+0.0200	1.0196
+0.0400	1.0385
+0.0600	1.0567
+0.0800	1.0742
+0.1000	1.0911
