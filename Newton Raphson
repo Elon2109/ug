@@ -1,0 +1,24 @@
+%Name: Maitryani Ghodeswar
+%TY'A'21
+%Newton Raphson Method clc
+clear all close all
+f=input('enter given function:');
+df=input('enter derivative of given function:');
+ddf=input('enter double derivative of given function:'); x1=input('enter initial guess:');
+n=input('enter no of iteration:');
+while ((f(x1)*ddf(x1))/(df(x1))^2)>1
+x1=input('enter given function again'); end
+for i=1:n
+x2=x1-f(x1)/df(x1); x1=x2;
+fprintf('\n after %d iteration, the root of given equation is %f',i,x2) end
+
+OUTPUT
+enter given function:@(x)((x^4)-x-10)
+enter derivative of given function:@(x)((4*x^3) - 1)
+enter double derivative of given function:@(x)(12*x^2) enter initial guess:2
+enter no of iteration:6
+
+after 1 iteration, the root of given equation is 1.870968 after 2 iteration, the root of given equation is 1.855781 after 3 iteration, the root of given equation is 1.855585 after 4 iteration, the root of given equation is 1.855585 after 5 iteration, the root of given equation is 1.855585 after 6 iteration, the root of given equation is 1.855585>>
+
+SOLVER
+>> fzero(f,[2]) ans = 1.8556
