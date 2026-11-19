@@ -1,0 +1,18 @@
+%Name:Shreyash Dilip Jadhav
+%TY'A'29
+%Trapezoidal Method clc
+clear all close all
+f=input('enter the given function:'); x0=input('enter the lower limit:'); xg=input('enter the upper limit:'); n=input('enter the no of iteration:') h=(xg-x0)/n;
+sum=0 for i=1:n-1
+x=x0+i*h; sum=sum+f(x);
+end
+I=(h/2)*(f(x0)+f(xg)+2*sum);
+fprintf('The approximate integral using the Trapezoidal Method is: %.4f\n', I);
+OUTPUT
+enter the given function:@(x) exp(x) enter the lower limit:0
+enter the upper limit:1.2
+enter the no of iteration:6 n = 6
+sum = 0
+The approximate integral using the Trapezoidal Method is: 2.3278
+SOLVER
+>> quadv(f,0,1.2) ans = 2.3201
