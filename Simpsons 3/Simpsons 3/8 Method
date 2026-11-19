@@ -1,0 +1,45 @@
+Program
+% Name: KUSHAL NAIK
+% Roll No.: 48
+% Simpsons 3/8 Method
+
+
+clc;
+clear all; close all;
+
+f = @(x) exp(x)./(1+x);
+
+
+a = 0;
+b = 6;
+n = 6;
+
+
+h = (b-a)/n;
+
+
+s = f(a)+f(b);
+
+
+for i = 1:n-1 x = a+i*h;
+
+if mod(i,3)==0 s = s+2*f(x);
+else
+s = s+3*f(x);
+ 
+end end
+
+I = (3*h/8)*s;
+
+
+fprintf('Integration = %f\n',I); Integration = 70.165276
+>> f = @(x) exp(x)./(1+x)
+
+
+>> quadv(f,0,6)
+
+
+ans =
+
+
+69.753483
