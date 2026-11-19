@@ -1,0 +1,32 @@
+%Name: Maitryani Ghodeswar
+%Roll no: 21
+%Div: TYME(A)
+%Lagrange Interpolation
+clc;
+close all; clear all;
+n = input('Enter the number of data points n: '); for i = 1:n
+x(i) = input('Enter x: ');
+end
+for i = 1:n
+y(i) = input('Enter y: ');
+end
+xp = input('Enter the value of x to find y: '); yp = 0;
+for i = 1:n
+p = 1;
+for j = 1:n
+if i ~= j
+p = p * (xp - x(j))/(x(i) - x(j));
+end
+end
+yp = yp + p * y(i);
+end
+fprintf('\nInterpolated value of y = %.4f\n', yp);
+Enter the number of data points n:4 Enter x: 5
+Enter x: 6
+Enter x: 9
+Enter x: 11
+Enter y: 12
+Enter y: 13
+Enter y: 14
+Enter y: 16
+Enter the value of x to find y: 10
