@@ -1,0 +1,88 @@
+% Name:Vaishnavi Kishor Rajole
+% Roll no.59
+% Div. TYME(A)
+% Quadratic Curve Fitting
+
+clc;
+close all;
+clear all;
+
+n = input('Enter the number of data points n: ');
+
+for i = 1:n
+    x(i) = input('Enter x: ');
+end
+
+for i = 1:n
+    y(i) = input('Enter y: ');
+end
+
+sumx = 0;
+sumy = 0;
+sumx2 = 0;
+sumx3 = 0;
+sumx4 = 0;
+sumxy = 0;
+sumx2y = 0;
+
+for i = 1:n
+    sumx = sumx + x(i);
+    sumy = sumy + y(i);
+    sumx2 = sumx2 + x(i)^2;
+    sumx3 = sumx3 + x(i)^3;
+    sumx4 = sumx4 + x(i)^4;
+    sumxy = sumxy + x(i)*y(i);
+    sumx2y = sumx2y + x(i)^2*y(i);
+end
+
+A = [sumx2 sumx n;
+    sumx3 sumx2 sumx;
+    sumx4 sumx3 sumx2];
+
+B = [sumy;
+    sumxy;
+    sumx2y];
+
+C = inv(A)*B;
+
+a = C(1);
+b = C(2);
+c = C(3);
+
+fprintf('a = %.4f\n',a);
+fprintf('b = %.4f\n',b);
+fprintf('c = %.4f\n',c);
+
+fprintf('\nSolution: y = ax^2 + bx + c\n');
+fprintf('Equation: y = %.4fx^2 + %.4fx + %.4f\n',a,b,c);
+
+OUTPUT
+Enter the number of data points n: 6
+Enter x: 0
+Enter x: 1
+Enter x: 2
+Enter x: 3
+Enter x: 4
+Enter x: 5
+Enter y: 2
+Enter y: 8
+Enter y: 14
+Enter y: 27
+Enter y: 41
+Enter y: 61
+
+RESULT
+a = 1.8214
+b = 2.5214
+c = 2.5000
+Solution: y = ax^2 + bx + c
+Equation: y = 1.8214x^2 + 2.5214x + 2.5000
+SOLVER
+polyfit(x,y,2)
+
+ans =1.8214    2.5214    2.500
+
+
+    
+
+
