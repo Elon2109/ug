@@ -1,0 +1,43 @@
+
+
+%Name: Vaishnavi Kishor Rajole
+%Roll no.59	
+
+%Div. TYME(A)
+%Straight Line 
+
+clc;
+close all; clear all;
+n = input('Enter the number of data points n: '); for i = 1:n
+x(i) = input('Enter x: ');
+end
+for i = 1:n
+y(i) = input('Enter y: ');
+end
+sumx = 0;
+sumy = 0;
+sumx2 = 0;
+sumxy = 0; for i = 1:n
+sumx = sumx + x(i); sumy = sumy + y(i);
+sumx2 = sumx2 + x(i)*x(i); sumxy = sumxy + x(i)*y(i);
+end
+A = [sumx,n; sumx2,sumx];
+B = [sumy; sumxy];
+C = inv(A)*B;
+a = C(1);
+b = C(2);
+fprintf('a = %.4f\n',a);
+fprintf('b = %.4f\n',b); fprintf('\nSolution: y = ax + b\n');
+fprintf('Equation: y = %.4fx + %.4f\n',a,b);
+Enter the number of data points n: 4 Enter x: 12
+Enter x: 15
+Enter x: 21
+Enter x: 25
+Enter y: 50
+Enter y: 70
+Enter y: 100
+Enter y: 120
+a = 5.3041
+b = -11.8005
+Solution: y = ax + b
+Equation: y = 5.3041x + -11.8005
