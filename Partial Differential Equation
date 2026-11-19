@@ -1,0 +1,53 @@
+%Name: Maitryani Ghodeswar
+%TY'A'21
+%Partial Differential Equation
+clc
+clear all
+close all
+n=4;
+for i=1:n
+u(1,i)=input('top values left to right:');
+end
+for i=1:n
+u(n,i)=input('bottom values left to right:');
+end
+for i=2:n-1
+u(i, 1)=input('left values top to bottom:');
+end
+for i=2:n-1
+u(i,n)=input('right values top to bottom:');
+end
+itn=input('no of iterations:');
+for k=1:itn
+for i=2:n-1
+for j=2:n-1
+u(i,j)=0.25*(u(i-1,j)+u(i+1,j)+u(i,j-1)+u(i,j+1));
+end
+end
+end
+disp('Final values of u')
+for i=1:n
+fprintf('\n')
+for j=1:n
+fprintf('\t%.2f',u(i,j))
+end
+end
+OUTPUT
+top values left to right:1000
+top values left to right:1000
+top values left to right:1000
+top values left to right:1000
+bottom values left to right:1000
+bottom values left to right:500
+bottom values left to right:0
+bottom values left to right:0
+left values top to bottom:2000
+left values top to bottom:2000
+right values top to bottom:500
+right values top to bottom:0
+no of iterations:10
+Final values of u
+1000.00    1000.00    1000.00    1000.00
+2000.00    1208.33     791.67     500.00
+2000.00    1041.67     458.33       0.00
+1000.00     500.00       0.00       0.00
