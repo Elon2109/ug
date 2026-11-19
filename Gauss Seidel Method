@@ -1,0 +1,35 @@
+% Name: Maitryani Ghodeswar
+% Roll No.: 21
+% Gauss Seidel Method
+
+clc;
+clear all;
+close all;
+
+fx = @(y,z)(32-4*y+z)/28;
+fy = @(x,z)(35-2*x-4*z)/17;
+fz = @(x,y)(24-x-3*y)/10;
+
+n = input('Enter the number of iterations: ');
+
+x = 0;
+y = 0;
+z = 0;
+
+for i = 1:n
+
+    x = fx(y,z);
+    y = fy(x,z);
+    z = fz(x,y);
+
+    fprintf('Iteration %d\n',i);
+    fprintf('x = %f\n',x);
+    fprintf('y = %f\n',y);
+    fprintf('z = %f\n',z);
+
+end
+Output after 6 iterations:
+x = 0.993595
+y = 1.506977
+z = 1.848547
+
