@@ -1,0 +1,51 @@
+Gauss Elimination Method – MATLAB Code
+% Name: Maitryani Ghodeswar
+% Roll No.: 21
+% Gauss Elimination Method
+
+clc;
+clear all;
+close all;
+
+A = [6 3 6;
+     2 3 3;
+     1 2 2];
+
+B = [30;
+     17;
+     11];
+
+n = length(B);
+
+for i = 1:n
+    for j = i+1:n
+        fact = A(j,i)/A(i,i);
+        A(j,:) = A(j,:) - fact*A(i,:);
+        B(j) = B(j) - fact*B(i);
+    end
+end
+
+X = zeros(n,1);
+
+for i = n:-1:1
+    X(i) = (B(i)-A(i,i+1:n)*X(i+1:n))/A(i,i);
+end
+
+fprintf('Solutions:\n');
+fprintf('x = %0.f\n',X(1));
+fprintf('y = %0.f\n',X(2));
+fprintf('z = %0.f\n',X(3));
+Output / Result
+Solutions:
+
+x = 1
+y = 2
+z = 3
+Solver
+A\B
+ans =
+
+     1
+     2
+     3
+                                  
